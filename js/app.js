@@ -3,7 +3,7 @@
  * CRECI-MG PJ 8373 | Centro de Ibirité - MG
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function startApp() {
   initHeader();
   initSearch();
   initProtagonist();
@@ -14,19 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initDrawer();
   initScrollReveal();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}
 
 /* ==========================================================================
    0. SCROLL REVEAL — ANIMAÇÕES DE ENTRADA SUAVES
    ========================================================================== */
 function initScrollReveal() {
-  // Adiciona classe 'reveal' às seções principais automaticamente
+  // Adiciona classe 'reveal' apenas às seções estáticas (nunca no grid dinâmico)
   const revealSelectors = [
     '.section-header-clean',
     '.editorial-layout',
     '.search-bar-clean',
     '.catalog-controls-clean',
-    '.properties-grid',
     '.simulator-grid',
     '.about-layout',
     '.sell-layout',
@@ -51,8 +56,8 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -20px 0px'
   });
 
   document.querySelectorAll('.reveal').forEach(el => {

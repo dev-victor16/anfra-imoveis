@@ -970,25 +970,30 @@ ul, ol { list-style: none; }
   border-color: rgba(196, 148, 63, 0.2);
 }
 
-.property-card-img-wrap {
+.property-card-img-wrap,
+.property-media-wrapper {
   position: relative;
-  height: 210px;
+  height: 220px;
   overflow: hidden;
+  background: var(--bg-muted);
 }
 
-.property-card-img-wrap img {
+.property-card-img-wrap img,
+.property-media-wrapper img,
+.property-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s var(--ease-out);
 }
 
-.property-card:hover .property-card-img-wrap img {
+.property-card:hover img {
   transform: scale(1.06);
 }
 
 /* Image Overlay Gradient */
-.property-card-img-wrap::after {
+.property-card-img-wrap::after,
+.property-media-wrapper::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -999,25 +1004,36 @@ ul, ol { list-style: none; }
   pointer-events: none;
 }
 
-/* Badge de Referência */
-.property-card-ref {
+/* Badges e tags */
+.property-badges-group {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(0,0,0,0.55);
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.badge-tag {
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   color: #fff;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  z-index: 2;
 }
 
-/* Tipo Badge */
-.property-card-type {
+.badge-tag.badge-mcmv {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+/* Badge de Referência */
+.property-card-ref,
+.property-ref-tag {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -1025,22 +1041,39 @@ ul, ol { list-style: none; }
   color: #fff;
   font-size: 0.68rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.property-card-type {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
   z-index: 2;
 }
 
 /* Card Body */
-.property-card-body {
+.property-card-body,
+.property-body {
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.property-card-location {
+.property-card-location,
+.property-location {
   font-size: 0.76rem;
   color: var(--text-tertiary);
   font-weight: 500;
@@ -1050,36 +1083,42 @@ ul, ol { list-style: none; }
   gap: 5px;
 }
 
-.property-card-location svg {
+.property-card-location svg,
+.property-location svg {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
 }
 
-.property-card-title {
+.property-card-title,
+.property-title {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-heading);
-  line-height: 1.3;
+  line-height: 1.35;
   margin-bottom: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 2.7em;
 }
 
 /* Specs Row */
-.property-card-specs {
+.property-card-specs,
+.property-specs {
   display: flex;
   gap: 14px;
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
 }
 
-.property-card-spec {
-  display: flex;
+.property-card-spec,
+.property-specs span {
+  display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.78rem;
@@ -1087,21 +1126,38 @@ ul, ol { list-style: none; }
   font-weight: 500;
 }
 
-.property-card-spec svg {
+.property-card-spec svg,
+.property-specs svg {
   width: 14px;
   height: 14px;
   color: var(--text-tertiary);
 }
 
 /* Footer do Card */
-.property-card-footer {
+.property-card-footer,
+.property-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  gap: 12px;
 }
 
-.property-card-price {
+.property-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-price-label {
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.property-card-price,
+.property-price {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 800;
@@ -1109,28 +1165,10 @@ ul, ol { list-style: none; }
   letter-spacing: -0.01em;
 }
 
-.property-card-cta {
+.property-card-cta,
+.btn-view-details {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-accent);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: gap var(--transition-fast);
-}
-
-.property-card:hover .property-card-cta {
-  gap: 8px;
-}
-
-.property-card-cta svg {
-  width: 14px;
-  height: 14px;
-  transition: transform var(--transition-fast);
-}
-
-.property-card:hover .property-card-cta svg {
-  transform: translateX(3px);
 }
 
 
