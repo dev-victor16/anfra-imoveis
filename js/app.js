@@ -13,7 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
   initSellForm();
   initModal();
   initDrawer();
+  initScrollReveal();
 });
+
+/* ==========================================================================
+   0. SCROLL REVEAL — ANIMAÇÕES DE ENTRADA SUAVES
+   ========================================================================== */
+function initScrollReveal() {
+  // Adiciona classe 'reveal' às seções principais automaticamente
+  const revealSelectors = [
+    '.section-header-clean',
+    '.editorial-layout',
+    '.search-bar-clean',
+    '.catalog-controls-clean',
+    '.properties-grid',
+    '.simulator-grid',
+    '.about-layout',
+    '.sell-layout',
+    '.faq-container',
+    '.footer-grid'
+  ];
+
+  revealSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+      }
+    });
+  });
+
+  // IntersectionObserver para revelar elementos
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+}
 
 /* ==========================================================================
    1. HEADER & NAVEGAÇÃO
