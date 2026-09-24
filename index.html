@@ -29,81 +29,50 @@
 </head>
 <body>
 
-  <!-- ==========================================================================
-       TOPBAR INSTITUCIONAL
-       ========================================================================== -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="creci-tag">CRECI-MG PJ 8373</span>
-        <span class="topbar-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          Rua Helena Antipoff, 200 - Sala 04, Centro — Ibirité/MG (Em frente à Caixa)
-        </span>
-      </div>
-      <div class="topbar-right">
-        <a href="https://wa.me/5531988281073?text=Ol%C3%A1%2C%20Daniel!%20Vim%20pelo%20site%20da%20Anfra%20Im%C3%B3veis." target="_blank" rel="noopener" class="topbar-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-          (31) 98828-1073
-        </a>
-        <a href="mailto:contato@anfraimoveis.com.br" class="topbar-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          contato@anfraimoveis.com.br
-        </a>
-      </div>
-    </div>
-  </div>
+
 
   <!-- ==========================================================================
        HEADER PRINCIPAL
        ========================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- Menu Principal Desktop (Lado Esquerdo) -->
-      <nav class="main-navigation" aria-label="Navegação Principal">
-        <a href="#inicio" class="nav-link active">Início</a>
-        <a href="#destaques" class="nav-link">Destaques</a>
-        <a href="#catalogo" class="nav-link">Imóveis</a>
-        <a href="#simulador" class="nav-link">Financiamento</a>
-        <a href="#sobre" class="nav-link">Sobre Nós</a>
-        <a href="#proprietarios" class="nav-link">Venda seu Imóvel</a>
-      </nav>
+      <div class="header-left">
+        <!-- Espaço de equilíbrio à esquerda / Informação de contato rápida -->
+        <span class="header-creci-pill">CRECI-MG PJ 8373</span>
+      </div>
 
-      <!-- Logotipo Oficial Centralizado (Apenas o Logo) -->
+      <!-- Logotipo Oficial Perfeitamente Centralizado -->
       <a href="#inicio" class="brand-link" aria-label="Anfra Imóveis — Página Inicial">
         <img src="assets/img/logo-anfra.png" alt="Anfra Imóveis" class="brand-logo" />
       </a>
 
-      <!-- Ações do Header (Lado Direito) -->
-      <div class="header-cta-group">
-        <a href="https://wa.me/5531988281073?text=Ol%C3%A1%2C%20Daniel!%20Gostaria%20de%20conversar%20sobre%20os%20im%C3%B3veis%20dispon%C3%ADveis%20na%20Anfra." target="_blank" rel="noopener" class="btn btn-accent btn-sm">
-          <span>Falar com Corretor</span>
-        </a>
+      <div class="header-right">
+        <!-- Menu Principal Desktop posicionado à direita -->
+        <nav class="main-navigation" aria-label="Navegação Principal">
+          <a href="#inicio" class="nav-link active">Início</a>
+          <a href="#destaques" class="nav-link">Destaques</a>
+          <a href="#catalogo" class="nav-link">Imóveis</a>
+          <a href="#simulador" class="nav-link">Financiamento</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#proprietarios" class="nav-link">Venda</a>
+        </nav>
+
+        <!-- Ações do Header (Lado Direito) -->
+        <div class="header-cta-group">
+          <a href="https://wa.me/5531988281073?text=Ol%C3%A1%2C%20Daniel!%20Gostaria%20de%20conversar%20sobre%20os%20im%C3%B3veis%20dispon%C3%ADveis%20na%20Anfra." target="_blank" rel="noopener" class="btn btn-accent btn-sm">
+            <span>Falar com Corretor</span>
+          </a>
+        </div>
+
+        <!-- Botão Menu Mobile -->
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
-
-      <!-- Botão Menu Mobile -->
-      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-
-      <!-- Botão WhatsApp Header Mobile -->
-      <a href="https://wa.me/5531988281073" target="_blank" rel="noopener" class="mobile-header-wa" aria-label="Falar no WhatsApp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.792 2.801.792h.005c3.18 0 5.767-2.586 5.767-5.766.001-3.187-2.575-5.778-5.777-5.778zm3.387 8.204c-.14.394-.813.729-1.127.777-.315.048-.724.062-2.148-.529-1.745-.724-2.884-2.483-2.971-2.599-.088-.116-.71-1.026-.71-1.956 0-.93.487-1.388.661-1.579.174-.19.379-.239.505-.239.126 0 .252.001.362.007.116.006.271-.044.425.326.158.379.537 1.311.584 1.406.047.095.079.206.016.332-.063.126-.095.205-.189.316-.095.11-.199.247-.284.332-.095.095-.194.198-.083.388.111.19.493.813 1.057 1.315.727.647 1.34.847 1.53.942.19.095.301.079.412-.047.111-.127.474-.553.6-.743.127-.19.253-.158.427-.095.174.063 1.106.521 1.296.616.19.095.316.142.363.221.047.079.047.458-.093.852z"/>
-        </svg>
-      </a>
     </div>
   </header>
 
