@@ -1,0 +1,19 @@
+# Arquivos temporários e dumps de análise
+*.html.bak
+*_dump.html
+*_data.json
+*_real_properties.json
+*_about.json
+*_curated_properties.json
+chunk*.js
+app_chunk.js
+*.log
+
+# Dependências Node
+node_modules/
+
+# Sistema Operacional e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
